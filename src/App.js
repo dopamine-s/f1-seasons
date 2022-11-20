@@ -1,8 +1,17 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+import RootLayout from './components/RootLayout';
+import MainMock from './mock-data/MainMock';
+
 const App = () => {
   return (
-    <div>
-      <h2>Let&apos;s get started!</h2>
-    </div>
+    <BrowserRouter>
+      <RootLayout>
+        <Routes>
+          <Route path="/" element={<MainMock />}></Route>
+        </Routes>
+      </RootLayout>
+    </BrowserRouter>
   );
 };
 
