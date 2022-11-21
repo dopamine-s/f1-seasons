@@ -9,3 +9,7 @@
     min-height: calc(100vh - 26rem);
   }
 }
+
+.main h1 {
+  margin: 5rem 0 3rem;
+}

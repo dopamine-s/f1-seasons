@@ -39,7 +39,7 @@ const MainFooter = () => {
         />
       </Link>
       <div className={classes.copyright}>
-        <p>© &nbsp;Fedor &nbsp;Klochkov</p>
+        <p>© Fedor Klochkov</p>
         <a
           className={classes['icons-copyright']}
           href="https://iconscout.com/icons/social"

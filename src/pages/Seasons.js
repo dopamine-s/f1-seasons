@@ -1,7 +1,10 @@
-const MainMock = ({ children }) => {
+import SeasonSelect from '../components/SeasonSelect';
+
+const Seasons = ({ children }) => {
   return (
     <>
-      <h1>Welcome to Formula 1!</h1>
+      <h1>FORMULA 1 SEASONS</h1>
+      <SeasonSelect />
       <div>
         <p>
           Brazilian race car driver Ayrton Senna was born on 21 March 1960 in
@@ -56,4 +59,4 @@ const MainMock = ({ children }) => {
   );
 };
 
-export default MainMock;
+export default Seasons;

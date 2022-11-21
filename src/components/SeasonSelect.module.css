@@ -1,0 +1,29 @@
+.season-select {
+  margin-bottom: 4rem;
+  font-size: 1.5rem;
+}
+
+.season-select .control {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.season-select label {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.season-select select {
+  font: inherit;
+  color: black;
+  padding: 0.8rem 4.5rem;
+  font-size: 2rem;
+  font-weight: bold;
+  border-radius: 6px;
+  border-width: 0.1rem;
+  appearance: unset;
+  cursor: pointer;
+}
