@@ -33,7 +33,7 @@ const MainFooter = () => {
       >
         <img
           src={logoImg}
-          width="70"
+          width="65"
           title="F1 Seasons App"
           alt="F1 Seasons App Logo"
         />
