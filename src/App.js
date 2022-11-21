@@ -9,6 +9,7 @@ const App = () => {
       <RootLayout>
         <Routes>
           <Route path="/" element={<MainMock />}></Route>
+          <Route path="/favorites" element={<MainMock />}></Route>
         </Routes>
       </RootLayout>
     </BrowserRouter>

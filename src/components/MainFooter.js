@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import gitImg from '../images/git-img.svg';
@@ -6,10 +7,30 @@ import logoImg from '../images/logo-img.svg';
 import classes from './MainFooter.module.css';
 
 const MainFooter = () => {
+  const [scroll, setScroll] = useState(0);
+
+  const handleScroll = () => {
+    setScroll(window.scrollY);
+  };
+
+  const handleUpScroll = () => {
+    window.scrollTo(0, 0);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <footer className={classes.footer}>
       <h1>F1 races results</h1>
-      <Link className={classes.logo} to="/">
+      <Link
+        onClick={scroll > 0 && handleUpScroll}
+        className={classes.logo}
+        to="/"
+      >
         <img
           src={logoImg}
           width="70"
@@ -18,7 +39,7 @@ const MainFooter = () => {
         />
       </Link>
       <div className={classes.copyright}>
-        <p>© Fedor Klochkov</p>
+        <p>© &nbsp;Fedor &nbsp;Klochkov</p>
         <a
           className={classes['icons-copyright']}
           href="https://iconscout.com/icons/social"
