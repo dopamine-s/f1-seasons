@@ -9,7 +9,7 @@ export const MOCK_FAVORITES = [
     date: new Date(2020, 7, 14),
   },
   {
-    driverId: 'leclerc',
+    driverId: 'sainz',
     permanentNumber: '162222',
     code: 'LEC',
     givenName: 'Charles Bukowski Jr. III',
@@ -18,7 +18,7 @@ export const MOCK_FAVORITES = [
     date: new Date(2020, 7, 14),
   },
   {
-    driverId: 'leclerc',
+    driverId: 'hamilton',
     permanentNumber: '16',
     code: 'LEC',
     givenName: 'Charles',
@@ -27,7 +27,7 @@ export const MOCK_FAVORITES = [
     date: new Date(2020, 7, 14),
   },
   {
-    driverId: 'leclerc',
+    driverId: 'russell',
     permanentNumber: '16',
     code: 'LEC',
     givenName: 'Charles',
@@ -36,7 +36,7 @@ export const MOCK_FAVORITES = [
     date: new Date(2020, 7, 14),
   },
   {
-    driverId: 'leclerc',
+    driverId: 'kevin_magnussen',
     permanentNumber: '16',
     code: 'LEC',
     givenName: 'Charles',

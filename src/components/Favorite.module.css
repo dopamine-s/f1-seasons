@@ -1,29 +1,36 @@
 .driver {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
-  min-width: 80vw;
-  padding: 1rem;
-  margin: 1rem 0;
+  padding: 0.5rem;
+  margin: 1rem 0 2rem;
   background-color: #fbf8f8;
 }
 
 @media (max-width: 768px) {
   .driver {
+    display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-width: 80vw;
+    padding: 1rem;
+    margin: 0 0 1.5rem 0;
   }
 }
 
 h2 {
-  padding: 1rem 0;
-  font-size: 1.1rem;
-  margin: 0 1rem;
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+  margin: 0 0.2rem;
 }
 
 @media (max-width: 768px) {
   h2 {
-    margin: 1rem 1rem;
+    font-size: 1rem;
+    margin: 0.5rem;
+    padding: 0;
   }
 }
 
