@@ -1,4 +1,4 @@
-const Round = ({ children }) => {
+const Round = () => {
   return (
     <>
       <h1>This is mock Rounds Page</h1>
@@ -52,7 +52,7 @@ const Round = ({ children }) => {
           eventual winner.
         </p>
       </div>
-      <div>{children}</div>
+      <div></div>
     </>
   );
 };

@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: sans-serif;  
+  font-family: sans-serif;
   margin: 0;
   height: 100%;
 }
@@ -28,6 +28,7 @@ ol {
 
 h1 {
   text-align: center;
+  text-transform: uppercase;
 }
 
 button {

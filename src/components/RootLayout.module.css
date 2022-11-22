@@ -1,15 +1,17 @@
 .main {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
   margin: 3rem auto;
   width: 90%;
-  min-height: calc(100vh - 16rem);
+  min-height: calc(100vh - 18rem);
 }
 
 @media (max-width: 768px) {
   .main {
-    min-height: calc(100vh - 26rem);
+    min-height: calc(100vh - 27rem);
   }
 }
 
 .main h1 {
-  margin: 5rem 0 3rem;
+  margin-bottom: 3rem;
 }

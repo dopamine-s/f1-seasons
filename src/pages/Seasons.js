@@ -1,9 +1,9 @@
 import SeasonSelect from '../components/SeasonSelect';
 
-const Seasons = ({ children }) => {
+const Seasons = () => {
   return (
     <>
-      <h1>FORMULA 1 SEASONS</h1>
+      <h1>Formula 1: seasons</h1>
       <SeasonSelect />
       <div>
         <p>
@@ -54,7 +54,7 @@ const Seasons = ({ children }) => {
           eventual winner.
         </p>
       </div>
-      <div>{children}</div>
+      <div></div>
     </>
   );
 };
