@@ -17,12 +17,6 @@
   color: white;
 }
 
-@media (max-width: 768px) {
-  .logo {
-    font-size: 1.5rem;;
-  }
-}
-
 .logo img {
   background-color: white;
   border-radius: 35px;
@@ -45,6 +39,21 @@
 }
 
 @media (max-width: 768px) {
+  .header {
+    display: grid;
+    justify-content: center;
+    height: 10rem;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .logo span {
+    margin-left: 1rem;
+    margin-right: 0;
+  }
+
   .nav li {
     font-size: 1rem;
     margin-left: 1.5rem;

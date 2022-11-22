@@ -8,7 +8,7 @@
 
 @media (max-width: 768px) {
   .main {
-    min-height: calc(100vh - 27rem);
+    min-height: calc(100vh - 31rem);
   }
 }
 

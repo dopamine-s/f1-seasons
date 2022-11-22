@@ -13,7 +13,7 @@ export const MOCK_FAVORITES = [
     permanentNumber: '162222',
     code: 'LEC',
     givenName: 'Charles Bukowski Jr. III',
-    familyName: 'Leclerc Erich Anna Maria Remarque',
+    familyName: 'Leclerc Anna Maria Remarque',
     nationality: 'Monegasque, whatever it is',
     date: new Date(2020, 7, 14),
   },
