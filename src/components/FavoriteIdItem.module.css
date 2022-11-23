@@ -1,7 +1,7 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  margin-right: 1rem;
+  margin-right: 0;
   margin-bottom: 1rem;
   grid-column: 1 / 3;
 }
@@ -10,8 +10,9 @@
   .wrapper {
     display: grid;
     min-width: 80vw;
-    grid-template-columns: 8rem auto;
+    grid-template-columns: 7rem auto;
     margin-bottom: 0.75rem;
+    margin-right: 0.5rem;
   }
 }
 
@@ -29,11 +30,13 @@
   font-size: 1.2rem;
   text-transform: uppercase;
   text-align: center;
+  word-break: break-all;
 }
 
 @media (max-width: 768px) {
   .info {
     padding: 0.5rem;
+    font-size: 1rem;
   }
 }
 

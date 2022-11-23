@@ -36,7 +36,7 @@ export const MOCK_FAVORITES = [
     date: new Date(2020, 7, 14),
   },
   {
-    driverId: 'kevin_magnussen',
+    driverId: 'kevin_magnussen_looong_name_jr',
     permanentNumber: '16',
     code: 'LEC',
     givenName: 'Charles',

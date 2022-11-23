@@ -1,7 +1,6 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  margin-right: 1rem;
   margin-bottom: 1rem;
 }
 
@@ -9,8 +8,9 @@
   .wrapper {
     display: grid;
     min-width: 80vw;
-    grid-template-columns: 8rem 1fr;
+    grid-template-columns: 7rem 1fr;
     margin-bottom: 0.75rem;
+    margin-right: 0.5rem;
   }
 }
 

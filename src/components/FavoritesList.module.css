@@ -1,0 +1,7 @@
+@media (min-width: 1280px) {
+  .favorites {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 3rem;
+  }
+}

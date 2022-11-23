@@ -1,7 +1,6 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  margin-right: 1rem;
   margin-bottom: 1rem;
 }
 
@@ -9,15 +8,16 @@
   .wrapper {
     display: grid;
     min-width: 80vw;
-    grid-template-columns: 8rem auto;
+    grid-template-columns: 7rem auto;
     margin-bottom: 0.75rem;
+    margin-right: 0.5rem;
   }
 }
 
 .info {
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
-  padding: 0.3rem 0.5rem;
+  padding: 0.3rem 1rem;
   border: 1px solid #fff7f7;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
   background-color: #fff7f7;

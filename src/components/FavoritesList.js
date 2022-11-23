@@ -1,8 +1,9 @@
 import Favorite from './Favorite';
+import classes from './FavoritesList.module.css';
 
 const FavoriteList = (props) => {
   return (
-    <ul>
+    <ul className={classes.favorites}>
       {props.favorites.map((favorite) => (
         <Favorite
           key={favorite.driverId}
