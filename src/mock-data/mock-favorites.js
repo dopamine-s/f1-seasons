@@ -44,4 +44,13 @@ export const MOCK_FAVORITES = [
     nationality: 'Monegasque',
     date: new Date(2020, 7, 14),
   },
+  {
+    driverId: 'kevin_magnussen',
+    permanentNumber: '16',
+    code: 'LEC',
+    givenName: 'Charles',
+    familyName: 'Leclerc',
+    nationality: 'Monegasque',
+    date: new Date(2020, 7, 14),
+  },
 ];

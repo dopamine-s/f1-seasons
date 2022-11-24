@@ -20,11 +20,16 @@
 .season-select select {
   font: inherit;
   color: black;
-  padding: 0.8rem 4.5rem;
+  padding: 0.6rem 4rem;
   font-size: 2rem;
   font-weight: bold;
   border-radius: 6px;
   border-width: 0.1rem;
   appearance: unset;
+  opacity: 0.75;
   cursor: pointer;
+}
+
+.season-select select:hover {
+  opacity: 1;
 }

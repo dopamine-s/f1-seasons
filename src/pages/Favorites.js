@@ -10,7 +10,22 @@ import {
 import classes from './Favorites.module.css';
 
 const Favorites = () => {
+  const [scroll, setScroll] = useState(0);
   const [favorites, setFavorites] = useState([]);
+
+  const handleScroll = () => {
+    setScroll(window.scrollY);
+  };
+
+  const handleUpButton = () => {
+    window.scrollTo(0, 0);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   useEffect(() => {
     setFavorites(
@@ -55,6 +70,11 @@ const Favorites = () => {
     <>
       <h1>Favorite drivers:</h1>
       <section className={classes.favorites}>{content}</section>
+      {scroll > 320 && (
+        <button className={classes['up-button']} onClick={handleUpButton}>
+          Go up
+        </button>
+      )}
     </>
   );
 };

@@ -21,11 +21,14 @@
   background-color: white;
   border-radius: 35px;
   margin-right: 1rem;
+  border: 1px solid;
+  color: black;
 }
 
 .logo span {
   margin-left: 1rem;
   margin-right: 4rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 1);
 }
 
 .nav ul {
@@ -36,6 +39,7 @@
 .nav li {
   margin-left: 2.5rem;
   font-size: 1.25rem;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 1);
 }
 
 @media (max-width: 768px) {
@@ -52,6 +56,10 @@
   .logo span {
     margin-left: 1rem;
     margin-right: 0;
+  }
+
+  .nav ul {
+    margin-left: 1rem;
   }
 
   .nav li {
