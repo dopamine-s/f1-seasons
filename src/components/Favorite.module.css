@@ -5,7 +5,12 @@
   padding: 0.5rem;
   margin: 1rem 0 2rem;
   background-color: #fbf8f8;
-  min-width: 520px;
+}
+
+@media (min-width: 768px) {
+  .driver {
+    min-width: 520px;
+  }
 }
 
 @media (max-width: 768px) {
