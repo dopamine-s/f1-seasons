@@ -48,11 +48,13 @@ const Favorites = () => {
   //   });
   // };
 
-  const deleteFavoriteHandler = (removedFavorite) => {
+  const deleteFavoriteHandler = (removedDriverId) => {
     setFavorites((prevFavorites) => {
       const updatedFavorites = prevFavorites.filter(
-        (favorite) => favorite !== removedFavorite,
+        (driver) => driver.driverId !== removedDriverId,
       );
+      console.log(prevFavorites);
+      console.log(updatedFavorites);
 
       return updatedFavorites;
     });

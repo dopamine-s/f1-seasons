@@ -14,6 +14,7 @@ const FavoriteList = (props) => {
           familyName={favorite.familyName}
           nationality={favorite.nationality}
           date={favorite.date}
+          onRemove={props.onRemove}
         />
       ))}
     </ul>
