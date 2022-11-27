@@ -35,10 +35,6 @@ const Favorites = () => {
     );
   }, []);
 
-  useEffect(() => {
-    setToStorage('favorites', favorites);
-  }, [favorites]);
-
   // const addFavoriteHandler = (addedFavorite) => {
   //   setFavorites((prevFavorites) => {
   //     const updatedFavorites = [...prevFavorites];
@@ -60,7 +56,11 @@ const Favorites = () => {
     });
   };
 
-  let content = <p style={{ textAlign: 'center' }}>No favorites found</p>;
+  useEffect(() => {
+    setToStorage('favorites', favorites);
+  }, [favorites]);
+
+  let content = <p className={classes.center}>No favorites found</p>;
 
   if (favorites.length > 0) {
     content = (

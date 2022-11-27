@@ -5,3 +5,21 @@
     column-gap: 2rem;
   }
 }
+
+@media (min-width: 1920px) {
+  .favorites {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 2560px) {
+  .favorites {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 3840px) {
+  .favorites {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
