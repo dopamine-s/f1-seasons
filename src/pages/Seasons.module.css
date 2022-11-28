@@ -1,3 +1,15 @@
+.seasons {
+  display: grid;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+} 
+
 .up-button {
   display: none
 }

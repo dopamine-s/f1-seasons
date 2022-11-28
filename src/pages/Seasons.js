@@ -37,7 +37,7 @@ const Seasons = () => {
     <>
       <h1>Formula 1: seasons</h1>
       <SeasonSelect />
-      {content}
+      <section className={classes.seasons}>{content}</section>
       {scroll > 320 && (
         <button className={classes['up-button']} onClick={handleUpButton}>
           Go up

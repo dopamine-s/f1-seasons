@@ -8,7 +8,7 @@ import FavoriteRemoveButton from './FavoriteRemoveButton';
 const Favorite = (props) => {
   return (
     <li>
-      <Card className={classes.driver}>
+      <Card className={classes.card}>
         <FavoriteIdItem title={'Driver Id'} info={props.driverId} />
         <FavoriteDate date={props.date} />
         <FavoriteInfoItem title={'Name'} info={props.givenName} />
