@@ -1,4 +1,4 @@
-import Card from '../UI/Card';
+import Card from '../../UI/Card';
 import RoundIdItem from './RoundIdItem';
 import RoundInfoItem from './RoundInfoItem';
 import classes from './SeasonRound.module.css';

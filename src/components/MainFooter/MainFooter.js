@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import gitImg from '../images/git-img.svg';
-import linkedImg from '../images/linkedIn-img.svg';
-import logoImg from '../images/logo-img.svg';
+import gitImg from '../../images/git-img.svg';
+import linkedImg from '../../images/linkedIn-img.svg';
+import logoImg from '../../images/logo-img.svg';
 import classes from './MainFooter.module.css';
 
 const MainFooter = () => {

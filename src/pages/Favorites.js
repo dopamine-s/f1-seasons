@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import FavoritesList from '../components/FavoritesList';
+import FavoritesList from '../components/Favorites/FavoritesList';
 import { MOCK_FAVORITES } from '../mock-data/mock-favorites';
 import {
   // getFromStorage,
@@ -74,7 +74,7 @@ const Favorites = () => {
       <section className={classes.favorites}>{content}</section>
       {scroll > 320 && (
         <button className={classes['up-button']} onClick={handleUpButton}>
-          Go up
+          Up!
         </button>
       )}
     </>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import SeasonRoundsList from '../components/SeasonRoundsList';
-import SeasonSelect from '../components/SeasonSelect';
+import SeasonRoundsList from '../components/Seasons/SeasonRoundsList';
+import SeasonSelect from '../components/Seasons/SeasonSelect';
 import { MOCK_SEASON } from '../mock-data/mock-season';
 import classes from './Seasons.module.css';
 
@@ -40,7 +40,7 @@ const Seasons = () => {
       <section className={classes.seasons}>{content}</section>
       {scroll > 320 && (
         <button className={classes['up-button']} onClick={handleUpButton}>
-          Go up
+          Up!
         </button>
       )}
     </>

@@ -1,4 +1,4 @@
-import Card from '../UI/Card';
+import Card from '../../UI/Card';
 import classes from './Favorite.module.css';
 import FavoriteDate from './FavoriteDate';
 import FavoriteIdItem from './FavoriteIdItem';

@@ -1,6 +1,6 @@
 import { Link, NavLink } from 'react-router-dom';
 
-import logoImg from '../images/logo-img.svg';
+import logoImg from '../../images/logo-img.svg';
 import classes from './MainHeader.module.css';
 
 const MainHeader = () => {

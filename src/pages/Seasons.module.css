@@ -26,7 +26,7 @@
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
     position: fixed;
     bottom: 10.5rem;
-    right: 0.8rem;
+    right: 5%;
     transition: 0.2s all ease-in-out;
     color: black;
     font-size: 1rem;
@@ -42,7 +42,7 @@
 @media (min-width: 1280px) {
   .up-button { 
     bottom: 10.5rem;
-    right: 0.2rem;
+    right: 1.5%
   }
 }
 

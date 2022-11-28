@@ -1,5 +1,5 @@
-import MainFooter from './MainFooter';
-import MainHeader from './MainHeader';
+import MainFooter from '../MainFooter/MainFooter';
+import MainHeader from '../MainHeader/MainHeader';
 import classes from './RootLayout.module.css';
 
 const RootLayout = ({ children }) => {

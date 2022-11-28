@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import RootLayout from './components/RootLayout';
+import RootLayout from './components/RootLayout/RootLayout';
 import Error from './pages/Error';
 import Favorites from './pages/Favorites';
 import Round from './pages/Round';
