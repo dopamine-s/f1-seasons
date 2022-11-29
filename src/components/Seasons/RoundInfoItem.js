@@ -1,6 +1,6 @@
 import classes from './RoundInfoItem.module.css';
 
-const FavoriteInfoItem = (props) => {
+const RoundInfoItem = (props) => {
   return (
     <>
       <div className={classes.wrapper}>
@@ -11,4 +11,4 @@ const FavoriteInfoItem = (props) => {
   );
 };
 
-export default FavoriteInfoItem;
+export default RoundInfoItem;

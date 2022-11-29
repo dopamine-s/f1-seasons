@@ -44,7 +44,7 @@ const Round = () => {
       >
         Back to the season
       </button>
-      <section className={classes.results}>{content}</section>
+      <section className={classes.round}>{content}</section>
       {scroll > 320 && (
         <button className={classes['up-button']} onClick={handleUpButton}>
           Up!

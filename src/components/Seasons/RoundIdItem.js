@@ -1,6 +1,6 @@
 import classes from './RoundIdItem.module.css';
 
-const FavoriteIdItem = (props) => {
+const RoundIdItem = (props) => {
   return (
     <>
       <div className={classes.wrapper}>
@@ -11,4 +11,4 @@ const FavoriteIdItem = (props) => {
   );
 };
 
-export default FavoriteIdItem;
+export default RoundIdItem;
