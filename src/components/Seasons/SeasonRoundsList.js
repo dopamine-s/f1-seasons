@@ -11,7 +11,8 @@ const SeasonRoundsList = (props) => {
           raceName={round.raceName}
           circuitId={round.Circuit.circuitId}
           circuitName={round.Circuit.circuitName}
-          location={round.Circuit.location.country}
+          country={round.Circuit.location.country}
+          city={round.Circuit.location.locality}
           date={round.date}
         />
       ))}

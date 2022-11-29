@@ -6,6 +6,7 @@ export const MOCK_SEASON = [
       circuitId: 'bahrain',
       circuitName: 'Bahrain International Circuit',
       location: {
+        locality: 'Sakhir',
         country: 'Bahrain',
       },
     },
@@ -18,6 +19,7 @@ export const MOCK_SEASON = [
       circuitId: 'bahrain',
       circuitName: 'Bahrain International Circuit',
       location: {
+        locality: 'Sakhir',
         country: 'Bahrain',
       },
     },
@@ -30,6 +32,7 @@ export const MOCK_SEASON = [
       circuitId: 'bahrain',
       circuitName: 'Bahrain International Circuit',
       location: {
+        locality: 'Sakhir',
         country: 'Bahrain',
       },
     },
@@ -42,6 +45,7 @@ export const MOCK_SEASON = [
       circuitId: 'bahrain',
       circuitName: 'Bahrain International Circuit',
       location: {
+        locality: 'Sakhir',
         country: 'Bahrain',
       },
     },
@@ -54,6 +58,7 @@ export const MOCK_SEASON = [
       circuitId: 'bahrain',
       circuitName: 'Bahrain International Circuit',
       location: {
+        locality: 'Sakhir',
         country: 'Bahrain',
       },
     },
@@ -66,6 +71,7 @@ export const MOCK_SEASON = [
       circuitId: 'bahrain',
       circuitName: 'Bahrain International Circuit',
       location: {
+        locality: 'Sakhir',
         country: 'Bahrain',
       },
     },
@@ -78,6 +84,7 @@ export const MOCK_SEASON = [
       circuitId: 'bahrain',
       circuitName: 'Bahrain International Circuit',
       location: {
+        locality: 'Sakhir',
         country: 'Bahrain',
       },
     },
@@ -90,6 +97,7 @@ export const MOCK_SEASON = [
       circuitId: 'bahrain',
       circuitName: 'Bahrain International Circuit',
       location: {
+        locality: 'Sakhir',
         country: 'Bahrain',
       },
     },
@@ -102,6 +110,7 @@ export const MOCK_SEASON = [
       circuitId: 'bahrain',
       circuitName: 'Bahrain International Circuit',
       location: {
+        locality: 'Sakhir',
         country: 'Bahrain',
       },
     },
@@ -114,6 +123,7 @@ export const MOCK_SEASON = [
       circuitId: 'bahrain',
       circuitName: 'Bahrain International Circuit',
       location: {
+        locality: 'Sakhir',
         country: 'Bahrain',
       },
     },
@@ -126,6 +136,7 @@ export const MOCK_SEASON = [
       circuitId: 'bahrain',
       circuitName: 'Bahrain International Circuit',
       location: {
+        locality: 'Sakhir',
         country: 'Bahrain',
       },
     },
@@ -138,6 +149,7 @@ export const MOCK_SEASON = [
       circuitId: 'bahrain',
       circuitName: 'Bahrain International Circuit',
       location: {
+        locality: 'Sakhir',
         country: 'Bahrain',
       },
     },
@@ -150,6 +162,7 @@ export const MOCK_SEASON = [
       circuitId: 'bahrain',
       circuitName: 'Bahrain International Circuit',
       location: {
+        locality: 'Sakhir',
         country: 'Bahrain',
       },
     },
@@ -162,6 +175,7 @@ export const MOCK_SEASON = [
       circuitId: 'bahrain',
       circuitName: 'Bahrain International Circuit',
       location: {
+        locality: 'Sakhir',
         country: 'Bahrain',
       },
     },
@@ -174,6 +188,7 @@ export const MOCK_SEASON = [
       circuitId: 'bahrain',
       circuitName: 'Bahrain International Circuit',
       location: {
+        locality: 'Sakhir',
         country: 'Bahrain',
       },
     },
@@ -186,6 +201,7 @@ export const MOCK_SEASON = [
       circuitId: 'bahrain',
       circuitName: 'Bahrain International Circuit',
       location: {
+        locality: 'Sakhir',
         country: 'Bahrain',
       },
     },
@@ -198,6 +214,7 @@ export const MOCK_SEASON = [
       circuitId: 'bahrain',
       circuitName: 'Bahrain International Circuit',
       location: {
+        locality: 'Sakhir',
         country: 'Bahrain',
       },
     },
@@ -210,6 +227,7 @@ export const MOCK_SEASON = [
       circuitId: 'bahrain',
       circuitName: 'Bahrain International Circuit',
       location: {
+        locality: 'Sakhir',
         country: 'Bahrain',
       },
     },

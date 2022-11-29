@@ -13,7 +13,8 @@ const SeasonRound = (props) => {
         <RoundInfoItem title={'Round'} info={props.round} />
         <RoundInfoItem title={'Circut ID'} info={props.circuitId} />
         <RoundInfoItem title={'Circuit Name'} info={props.circuitName} />
-        <RoundInfoItem title={'Country'} info={props.location} />
+        <RoundInfoItem title={'Country'} info={props.country} />
+        <RoundInfoItem title={'City'} info={props.city} />
         <SeasonRoundDetailsButton info={'Show standings'} />
       </Card>
     </li>
