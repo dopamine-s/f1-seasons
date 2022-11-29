@@ -24,9 +24,8 @@ const RoundResult = (props) => {
         <ResultInfoItem title={'Team'} info={props.team} />
         <ResultInfoItem title={'Time'} info={props.time} />
         <FavoriteAddButton
-          info={'+'}
-          // onAdd={props.onAdd}
-          // driverId={props.driverId}
+        // onAdd={props.onAdd}
+        // driverId={props.driverId}
         />
       </Card>
     </li>

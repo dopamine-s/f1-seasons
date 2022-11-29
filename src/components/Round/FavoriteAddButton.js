@@ -10,7 +10,8 @@ const FavoriteAddButton = (props) => {
   return (
     <>
       <button className={classes.button} onClick={addHandler}>
-        {props.info}
+        <span className={classes.plus}>+</span>
+        <span className={classes.words}> Add to Fav</span>
       </button>
     </>
   );

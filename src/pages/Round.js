@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import NamesList from '../components/Round/NamesList';
 import RoundResultsList from '../components/Round/RoundResultsList';
 import { MOCK_ROUND_RESULTS } from '../mock-data/mock-round-results';
 import classes from './Round.module.css';
@@ -44,6 +45,7 @@ const Round = () => {
       >
         Back to the season
       </button>
+      <NamesList />
       <section className={classes.round}>{content}</section>
       {scroll > 320 && (
         <button className={classes['up-button']} onClick={handleUpButton}>
