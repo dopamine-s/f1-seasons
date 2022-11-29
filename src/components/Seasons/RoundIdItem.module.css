@@ -45,7 +45,7 @@
   color: #a21800;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   .wrapper h2 { 
     text-align:  center;
     text-transform: uppercase;
