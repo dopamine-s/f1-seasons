@@ -6,7 +6,7 @@ export const MOCK_FAVORITES = [
     givenName: 'Charles',
     familyName: 'Leclerc',
     nationality: 'Monegasque',
-    date: new Date(2020, 7, 14),
+    dateOfBirth: '1997-10-16',
   },
   {
     driverId: 'sainz',
@@ -15,7 +15,7 @@ export const MOCK_FAVORITES = [
     givenName: 'Charles Bukowski Jr. III',
     familyName: 'Leclerc Anna Maria Remarque',
     nationality: 'Monegasque of Monegasques ',
-    date: new Date(2020, 7, 14),
+    dateOfBirth: '1997-10-16',
   },
   {
     driverId: 'hamilton',
@@ -24,7 +24,7 @@ export const MOCK_FAVORITES = [
     givenName: 'Charles',
     familyName: 'Leclerc',
     nationality: 'Monegasque',
-    date: new Date(2020, 7, 14),
+    dateOfBirth: '1997-10-16',
   },
   {
     driverId: 'russell',
@@ -33,7 +33,7 @@ export const MOCK_FAVORITES = [
     givenName: 'Charles',
     familyName: 'Leclerc',
     nationality: 'Monegasque',
-    date: new Date(2020, 7, 14),
+    dateOfBirth: '1997-10-16',
   },
   {
     driverId: 'kevin_magnussen_looong_name_jr',
@@ -42,7 +42,7 @@ export const MOCK_FAVORITES = [
     givenName: 'Charles',
     familyName: 'Leclerc',
     nationality: 'Monegasque',
-    date: new Date(2020, 7, 14),
+    dateOfBirth: '1997-10-16',
   },
   {
     driverId: 'kevin_magnussen',
@@ -51,6 +51,6 @@ export const MOCK_FAVORITES = [
     givenName: 'Charles',
     familyName: 'Leclerc',
     nationality: 'Monegasque',
-    date: new Date(2020, 7, 14),
+    dateOfBirth: '1997-10-16',
   },
 ];

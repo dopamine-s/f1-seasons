@@ -1,0 +1,25 @@
+@media (min-width: 1280px) {
+  .results {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1.8rem;
+  }
+}
+
+@media (min-width: 1920px) {
+  .results {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 2560px) {
+  .results {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 3840px) {
+  .favorites {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}

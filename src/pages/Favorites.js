@@ -49,8 +49,6 @@ const Favorites = () => {
       const updatedFavorites = prevFavorites.filter(
         (driver) => driver.driverId !== removedDriverId,
       );
-      console.log(prevFavorites);
-      console.log(updatedFavorites);
 
       return updatedFavorites;
     });

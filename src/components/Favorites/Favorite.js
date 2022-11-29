@@ -10,7 +10,7 @@ const Favorite = (props) => {
     <li>
       <Card className={classes.card}>
         <FavoriteIdItem title={'Driver Id'} info={props.driverId} />
-        <FavoriteDate date={props.date} />
+        <FavoriteDate date={props.dateOfBirth} />
         <FavoriteInfoItem title={'Name'} info={props.givenName} />
         <FavoriteInfoItem title={'Last Name'} info={props.familyName} />
         <FavoriteInfoItem title={'Code'} info={props.code} />

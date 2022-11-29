@@ -1,9 +1,11 @@
 import classes from './FavoriteDate.module.css';
 
 const FavoriteDate = (props) => {
-  const month = props.date.toLocaleString('en-Us', { month: 'long' });
-  const year = props.date.getFullYear();
-  const day = props.date.toLocaleString('en-Us', { day: '2-digit' });
+  const date = new Date(props.date);
+
+  const month = date.toLocaleString('en-Us', { month: 'long' });
+  const year = date.getFullYear();
+  const day = date.toLocaleString('en-Us', { day: '2-digit' });
 
   return (
     <>

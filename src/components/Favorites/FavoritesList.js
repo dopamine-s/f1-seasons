@@ -13,7 +13,7 @@ const FavoriteList = (props) => {
           givenName={favorite.givenName}
           familyName={favorite.familyName}
           nationality={favorite.nationality}
-          date={favorite.date}
+          dateOfBirth={favorite.dateOfBirth}
           onRemove={props.onRemove}
         />
       ))}
