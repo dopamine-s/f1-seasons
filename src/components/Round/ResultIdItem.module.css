@@ -12,7 +12,6 @@
   display: flex;
   padding: 0.5rem;
   border: 1px solid #fff7f7;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
   background-color: #fff7f7;
   color: black;
   border-radius: 12px;
@@ -22,11 +21,11 @@
   text-transform: uppercase;
   text-align: center;
   word-break: break-all;
+  font-weight: bold;
 }
 
 .info-winner {
   border-color: #a21800;
-  font-weight: bold;
 }
 
 .wrapper h2 {
