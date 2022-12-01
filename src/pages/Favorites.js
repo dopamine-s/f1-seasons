@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import FavoritesList from '../components/Favorites/FavoritesList';
+import LoadingSpinner from '../components/LoadingSpinner/LoadingSpinner';
 import { MOCK_FAVORITES } from '../mock-data/mock-favorites';
 import {
   // getFromStorage,
@@ -12,6 +13,7 @@ import classes from './Favorites.module.css';
 const Favorites = () => {
   const [scroll, setScroll] = useState(0);
   const [favorites, setFavorites] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleScroll = () => {
     setScroll(window.scrollY);
@@ -28,11 +30,15 @@ const Favorites = () => {
   }, []);
 
   useEffect(() => {
+    setIsLoading(true);
     setFavorites(
       // getFromStorage(
       // 'favorites') ??
       MOCK_FAVORITES,
     );
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1500);
   }, []);
 
   // const addFavoriteHandler = (addedFavorite) => {
@@ -69,7 +75,8 @@ const Favorites = () => {
   return (
     <>
       <h1>Favorite drivers:</h1>
-      <section className={classes.favorites}>{content}</section>
+      {isLoading && <LoadingSpinner />}
+      <section className={classes.favorites}>{!isLoading && content}</section>
       {scroll > 320 && (
         <button className={classes['up-button']} onClick={handleUpButton}>
           Up!
