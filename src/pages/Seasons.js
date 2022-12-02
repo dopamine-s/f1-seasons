@@ -4,7 +4,6 @@ import { getRounds, getSeasonsList } from '../api/api';
 import LoadingSpinner from '../components/LoadingSpinner/LoadingSpinner';
 import SeasonRoundsList from '../components/Seasons/SeasonRoundsList';
 import SeasonSelect from '../components/Seasons/SeasonSelect';
-// import { MOCK_SEASON } from '../mock-data/mock-season';
 import { currentYear } from '../utils/helpers';
 import classes from './Seasons.module.css';
 
@@ -63,9 +62,7 @@ const Seasons = () => {
     setIsLoading(true);
     loadSeasons();
     loadRounds();
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 1500);
+    setIsLoading(false);
   }, [loadSeasons, loadRounds, selectedSeason]);
 
   let content = <p className={classes.center}>No seasons found</p>;
