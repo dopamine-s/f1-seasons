@@ -12,7 +12,7 @@ const Seasons = () => {
   const [scroll, setScroll] = useState(0);
   const [seasons, setSeasons] = useState([]);
   const [selectedSeason, setSelectedSeason] = useState(currentYear);
-  const [error, setError] = useState();
+  const [error, setError] = useState(null);
   const [rounds, setRounds] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -31,6 +31,8 @@ const Seasons = () => {
   }, []);
 
   const loadSeasons = useCallback(async function () {
+    setError(null);
+
     try {
       const seasons = await getSeasonsList();
       setSeasons(seasons);
@@ -69,7 +71,12 @@ const Seasons = () => {
         selected={selectedSeason}
       />
       {isLoading && <LoadingSpinner />}
-      {error && <p>{error}</p>}
+      {error && (
+        <div>
+          <h2 className={classes.error}>Error! Something went wrong.</h2>
+          <p className={classes.center}>{error}</p>
+        </div>
+      )}
       {!error && <section className={classes.seasons}>{content}</section>}
       {scroll > 320 && (
         <button className={classes['up-button']} onClick={handleUpButton}>

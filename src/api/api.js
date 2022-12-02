@@ -9,3 +9,10 @@ export const getSeasonsList = async () => {
 
   return response.MRData.SeasonTable.Seasons;
 };
+
+export const getRounds = async (season) => {
+  const responseJson = await fetch(`http://ergast.com/api/f1/${season}.json`);
+  const response = await responseJson.json();
+
+  return response.MRData.RaceTable.Races;
+};
