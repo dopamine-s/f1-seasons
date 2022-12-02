@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useState } from 'react';
 
-import { getSeasonsList } from '../api/api';
+import { getRounds, getSeasonsList } from '../api/api';
 import LoadingSpinner from '../components/LoadingSpinner/LoadingSpinner';
 import SeasonRoundsList from '../components/Seasons/SeasonRoundsList';
 import SeasonSelect from '../components/Seasons/SeasonSelect';
-import { MOCK_SEASON } from '../mock-data/mock-season';
+// import { MOCK_SEASON } from '../mock-data/mock-season';
 import { currentYear } from '../utils/helpers';
 import classes from './Seasons.module.css';
 
@@ -30,6 +30,10 @@ const Seasons = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const seasonChangeHandler = (seasonYear) => {
+    setSelectedSeason(seasonYear);
+  };
+
   const loadSeasons = useCallback(async function () {
     setError(null);
 
@@ -41,26 +45,34 @@ const Seasons = () => {
     }
   }, []);
 
-  console.log('selectedSeason', selectedSeason);
+  const loadRounds = useCallback(
+    async function () {
+      setError(null);
+
+      try {
+        const rounds = await getRounds(selectedSeason);
+        setRounds(rounds);
+      } catch (err) {
+        setError(err.message);
+      }
+    },
+    [selectedSeason],
+  );
 
   useEffect(() => {
     setIsLoading(true);
     loadSeasons();
-    setRounds(MOCK_SEASON);
+    loadRounds();
     setTimeout(() => {
       setIsLoading(false);
     }, 1500);
-  }, [loadSeasons]);
+  }, [loadSeasons, loadRounds, selectedSeason]);
 
   let content = <p className={classes.center}>No seasons found</p>;
 
   if (rounds.length > 0) {
     content = <SeasonRoundsList rounds={rounds} />;
   }
-
-  const seasonChangeHandler = (seasonYear) => {
-    setSelectedSeason(seasonYear);
-  };
 
   return (
     <>

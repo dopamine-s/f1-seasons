@@ -8,8 +8,6 @@ const SeasonSelect = (props) => {
   };
 
   const reversed = props.seasons.sort((a, b) => b.season - a.season);
-  console.log('reversed', reversed);
-  console.log('props.seasons', props.seasons);
 
   return (
     <div className={classes['season-select']}>
