@@ -2,20 +2,22 @@ import classes from './SeasonSelect.module.css';
 
 const SeasonSelect = (props) => {
   const changeSeasonYearHandler = (event) => {
-    const yearFilterValue = event.target.value;
+    const seasonYear = event.target.value;
 
-    props.onChangeYearFilter(yearFilterValue);
+    props.onChangeSeason(seasonYear);
   };
+
+  const reversed = props.seasons.sort((a, b) => b.season - a.season);
+  console.log('reversed', reversed);
 
   return (
     <div className={classes['season-select']}>
       <div className={classes.control}>
         <label>Select season:</label>
         <select value={props.selected} onChange={changeSeasonYearHandler}>
-          <option value="2022">2022</option>
-          <option value="2021">2021</option>
-          <option value="2020">2020</option>
-          <option value="2019">2019</option>
+          {reversed.map((season) => (
+            <option key={season.season}>{season.season}</option>
+          ))}
         </select>
       </div>
     </div>
