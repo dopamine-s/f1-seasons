@@ -2,8 +2,6 @@ import SeasonRound from './SeasonRound';
 import classes from './SeasonRoundsList.module.css';
 
 const SeasonRoundsList = (props) => {
-  console.log('rounds in SeasonRoundsList', props.rounds);
-
   return (
     <ul className={classes.rounds}>
       {props.rounds.map((round) => (
@@ -16,6 +14,7 @@ const SeasonRoundsList = (props) => {
           country={round.Circuit.Location.country}
           city={round.Circuit.Location.locality}
           date={round.date}
+          selectedSeason={props.selectedSeason}
         />
       ))}
     </ul>

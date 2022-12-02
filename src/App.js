@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import RootLayout from './components/RootLayout/RootLayout';
-import Error from './pages/Error';
 import Favorites from './pages/Favorites';
+import NotFound from './pages/NotFound';
 import Round from './pages/Round';
 import Seasons from './pages/Seasons';
 
@@ -15,7 +15,7 @@ const App = () => {
           <Route path=":seasonId" element={<Seasons />} />
           <Route path=":seasonId/:roundId" element={<Round />} />
           <Route path="/favorites" element={<Favorites />} />
-          <Route path="*" element={<Error />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </RootLayout>
     </BrowserRouter>

@@ -68,7 +68,9 @@ const Seasons = () => {
   let content = <p className={classes.center}>No seasons found</p>;
 
   if (rounds.length > 0) {
-    content = <SeasonRoundsList rounds={rounds} />;
+    content = (
+      <SeasonRoundsList rounds={rounds} selectedSeason={selectedSeason} />
+    );
   }
 
   return (

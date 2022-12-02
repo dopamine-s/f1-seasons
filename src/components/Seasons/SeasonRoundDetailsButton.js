@@ -1,17 +1,17 @@
 import classes from './SeasonRoundDetailsButton.module.css';
 
-const FavoriteRemoveButton = (props) => {
-  const navigateHandler = () => {
-    console.log(props);
+const SeasonRoundDetailsButton = (props) => {
+  const clickHandler = () => {
+    props.onSelect(props.round);
   };
 
   return (
     <>
-      <button className={classes.button} onClick={navigateHandler}>
+      <button className={classes.button} onClick={clickHandler}>
         {props.info}
       </button>
     </>
   );
 };
 
-export default FavoriteRemoveButton;
+export default SeasonRoundDetailsButton;

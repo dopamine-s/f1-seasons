@@ -1,17 +1,21 @@
-import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useCallback, useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 
+import { getRoundResults } from '../api/api';
 import LoadingSpinner from '../components/LoadingSpinner/LoadingSpinner';
 import NamesList from '../components/Round/NamesList';
 import RoundResultsList from '../components/Round/RoundResultsList';
-import { MOCK_ROUND_RESULTS } from '../mock-data/mock-round-results';
 import classes from './Round.module.css';
 
 const Round = () => {
   const navigate = useNavigate();
   const [scroll, setScroll] = useState(0);
+  const [error, setError] = useState(null);
   const [results, setResults] = useState([]);
+  const [raceName, setRaceName] = useState('Circuit Name');
   const [isLoading, setIsLoading] = useState(false);
+
+  const { seasonId, roundId } = useParams();
 
   const handleScroll = () => {
     setScroll(window.scrollY);
@@ -27,13 +31,27 @@ const Round = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const loadResults = useCallback(
+    async function () {
+      setError(null);
+
+      try {
+        const response = await getRoundResults(seasonId, roundId);
+        const results = response.MRData.RaceTable.Races[0].Results;
+        setRaceName(response.MRData.RaceTable.Races[0].raceName);
+        setResults(results);
+      } catch (err) {
+        setError(err.message);
+      }
+    },
+    [seasonId, roundId],
+  );
+
   useEffect(() => {
     setIsLoading(true);
-    setResults(MOCK_ROUND_RESULTS);
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 1500);
-  }, []);
+    loadResults();
+    setIsLoading(false);
+  }, [loadResults]);
 
   let content = <p className={classes.center}>No seasons found</p>;
 
@@ -43,17 +61,27 @@ const Round = () => {
 
   return (
     <>
-      {!isLoading && <h1>Circuit Name</h1>}
+      {!isLoading && !error && <h1>{raceName}</h1>}
       <button
         className={classes['nav-button']}
-        onClick={() => navigate(-1)}
+        onClick={() => navigate('/')}
         type="button"
       >
-        Back to the season
+        Back to the seasons
       </button>
       {isLoading && <LoadingSpinner />}
-      {!isLoading && <NamesList />}
-      <section className={classes.round}>{!isLoading && content}</section>
+      {error && (
+        <div>
+          <h2 className={classes.error}>Error! Something went wrong.</h2>
+          <p className={classes.center}>{error}</p>
+        </div>
+      )}
+      {!error && (
+        <>
+          {!isLoading && <NamesList />}
+          <section className={classes.round}>{!isLoading && content}</section>
+        </>
+      )}
       {scroll > 320 && (
         <button className={classes['up-button']} onClick={handleUpButton}>
           Up!

@@ -2,8 +2,6 @@ import RoundResult from './RoundResult';
 import classes from './RoundResultsList.module.css';
 
 const RoundResultsList = (props) => {
-  console.log(props);
-
   return (
     <ul className={classes.results}>
       {props.results.map((result) => (
