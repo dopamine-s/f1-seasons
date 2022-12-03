@@ -5,6 +5,7 @@ import { getRoundResults } from '../api/api';
 import LoadingSpinner from '../components/LoadingSpinner/LoadingSpinner';
 import NamesList from '../components/Round/NamesList';
 import RoundResultsList from '../components/Round/RoundResultsList';
+import UpButton from '../UI/UpButton';
 import classes from './Round.module.css';
 
 const Round = () => {
@@ -91,9 +92,10 @@ const Round = () => {
         </>
       )}
       {scroll > 320 && (
-        <button className={classes['up-button']} onClick={handleUpButton}>
-          Up!
-        </button>
+        <UpButton
+          className={classes['up-button--round']}
+          onClick={handleUpButton}
+        />
       )}
     </>
   );

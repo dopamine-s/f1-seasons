@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import FavoritesList from '../components/Favorites/FavoritesList';
 import LoadingSpinner from '../components/LoadingSpinner/LoadingSpinner';
 import { MOCK_FAVORITES } from '../mock-data/mock-favorites';
+import UpButton from '../UI/UpButton';
 import {
   // getFromStorage,
 
@@ -78,9 +79,10 @@ const Favorites = () => {
       {isLoading && <LoadingSpinner />}
       <section className={classes.favorites}>{!isLoading && content}</section>
       {scroll > 320 && (
-        <button className={classes['up-button']} onClick={handleUpButton}>
-          Up!
-        </button>
+        <UpButton
+          className={classes['up-button--favorites']}
+          onClick={handleUpButton}
+        />
       )}
     </>
   );

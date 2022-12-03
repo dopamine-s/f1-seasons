@@ -4,6 +4,7 @@ import { getRounds, getSeasonsList } from '../api/api';
 import LoadingSpinner from '../components/LoadingSpinner/LoadingSpinner';
 import SeasonRoundsList from '../components/Seasons/SeasonRoundsList';
 import SeasonSelect from '../components/Seasons/SeasonSelect';
+import UpButton from '../UI/UpButton';
 import { currentYear } from '../utils/helpers';
 import classes from './Seasons.module.css';
 
@@ -90,9 +91,10 @@ const Seasons = () => {
       )}
       {!error && <section className={classes.seasons}>{content}</section>}
       {scroll > 320 && (
-        <button className={classes['up-button']} onClick={handleUpButton}>
-          Up!
-        </button>
+        <UpButton
+          className={classes['up-button--seasons']}
+          onClick={handleUpButton}
+        />
       )}
     </>
   );

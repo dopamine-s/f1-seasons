@@ -50,6 +50,6 @@ h2 {
 
 @media (min-width: 1280px) {
   .card {
-    min-width: 560px;
+    width: 520px;
   }
 }

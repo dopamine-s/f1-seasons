@@ -1,10 +1,10 @@
 .wrapper {
   display: grid;
-  min-width: 80vw;
   grid-template-columns: 7rem auto;
   margin-bottom: 0.75rem;
   margin-right: 0.5rem;
   margin-top: 0.2rem;
+  width: 100%;
 }
 
 .info {

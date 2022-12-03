@@ -43,3 +43,9 @@ h2 {
     align-self: start;
   }
 }
+
+@media (min-width: 1280px) {
+  .card {
+    width: 546px;
+  }
+}
