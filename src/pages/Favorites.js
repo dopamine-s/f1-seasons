@@ -7,7 +7,7 @@ import classes from './Favorites.module.css';
 
 const Favorites = () => {
   const [scroll, setScroll] = useState(0);
-  const [favorites, setFavorites] = useState([]);
+  const [favorites, setFavorites] = useState(getFromStorage('favorites') || []);
 
   const handleScroll = () => {
     setScroll(window.scrollY);
@@ -21,10 +21,6 @@ const Favorites = () => {
     window.addEventListener('scroll', handleScroll);
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  useEffect(() => {
-    setFavorites(getFromStorage('favorites') ?? []);
   }, []);
 
   const deleteFavoriteHandler = (removedDriverId) => {
@@ -44,7 +40,7 @@ const Favorites = () => {
 
   let content = <p className={classes.center}>No favorites found</p>;
 
-  if (favorites.length > 0) {
+  if (favorites && favorites.length > 0) {
     content = (
       <FavoritesList favorites={favorites} onRemove={deleteFavoriteHandler} />
     );

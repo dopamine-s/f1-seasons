@@ -18,7 +18,9 @@ const Round = () => {
   const [raceName, setRaceName] = useState('');
   const [roundNumber, setroundNumber] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [favorites, setFavorites] = useState([]);
+  const [favorites, setFavorites] = useState(
+    getFromStorage('favorites') || MOCK_FAVORITES,
+  );
 
   const { seasonId, roundId } = useParams();
 
@@ -60,17 +62,19 @@ const Round = () => {
     setIsLoading(false);
   }, [loadResults]);
 
-  useEffect(() => {
-    setFavorites(getFromStorage('favorites') ?? MOCK_FAVORITES);
-  }, []);
-
   const addFavoriteHandler = (addedFavorite) => {
     console.log('addedFavorite', addedFavorite);
     console.log('id', addedFavorite.id);
 
-    // setFavorites((prevFavorites) => {
-    //   prevFavorites.shift(addedFavorite);
-    // });
+    setFavorites((prevFavorites) => {
+      const updatedFavorites = [...prevFavorites];
+      console.log('updatedFavorites', updatedFavorites);
+      updatedFavorites.unshift(addedFavorite);
+
+      return updatedFavorites;
+    });
+
+    return favorites;
   };
 
   useEffect(() => {
