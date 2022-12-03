@@ -47,3 +47,9 @@ h2 {
     min-width: 520px;
   }
 }
+
+@media (min-width: 1280px) {
+  .card {
+    min-width: 560px;
+  }
+}

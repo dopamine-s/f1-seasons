@@ -12,7 +12,8 @@ const Round = () => {
   const [scroll, setScroll] = useState(0);
   const [error, setError] = useState(null);
   const [results, setResults] = useState([]);
-  const [raceName, setRaceName] = useState('Circuit Name');
+  const [raceName, setRaceName] = useState('');
+  const [roundNumber, setroundNumber] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
   const { seasonId, roundId } = useParams();
@@ -39,6 +40,7 @@ const Round = () => {
         const response = await getRoundResults(seasonId, roundId);
         const results = response.MRData.RaceTable.Races[0].Results;
         setRaceName(response.MRData.RaceTable.Races[0].raceName);
+        setroundNumber(response.MRData.RaceTable.Races[0].round);
         setResults(results);
       } catch (err) {
         setError(err.message);
@@ -61,7 +63,13 @@ const Round = () => {
 
   return (
     <>
-      {!isLoading && !error && <h1>{raceName}</h1>}
+      {!isLoading && !error && (
+        <>
+          <h1>{raceName}</h1>
+          <p className={classes['round-info']}>Round: {roundNumber}</p>
+          <p className={classes['round-info']}>{seasonId}</p>
+        </>
+      )}
       <button
         className={classes['nav-button']}
         onClick={() => navigate('/')}
