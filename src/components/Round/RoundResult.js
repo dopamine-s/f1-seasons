@@ -5,6 +5,10 @@ import ResultInfoItem from './ResultInfoItem';
 import classes from './RoundResult.module.css';
 
 const RoundResult = (props) => {
+  const addFavoriteHandler = (addedFavorite) => {
+    props.onAdd(addedFavorite);
+  };
+
   let winnerClasses = '';
 
   if (props.position <= 3) {
@@ -24,8 +28,15 @@ const RoundResult = (props) => {
         <ResultInfoItem title={'Team'} info={props.team} />
         <ResultInfoItem title={'Time'} info={props.time} />
         <FavoriteAddButton
-        // onAdd={props.onAdd}
-        // driverId={props.driverId}
+          id={props.id}
+          driverId={props.driverId}
+          dateOfBirth={props.dateOfBirth}
+          givenName={props.givenName}
+          familyName={props.familyName}
+          code={props.code}
+          nationality={props.nationality}
+          permanentNumber={props.permanentNumber}
+          onAdd={addFavoriteHandler}
         />
       </Card>
     </li>

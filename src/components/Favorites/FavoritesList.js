@@ -6,7 +6,8 @@ const FavoriteList = (props) => {
     <ul className={classes.favorites}>
       {props.favorites.map((favorite) => (
         <Favorite
-          key={favorite.driverId}
+          key={favorite.id}
+          id={favorite.id}
           driverId={favorite.driverId}
           permanentNumber={favorite.permanentNumber}
           code={favorite.code}

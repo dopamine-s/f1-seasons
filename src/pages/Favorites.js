@@ -1,20 +1,13 @@
 import { useEffect, useState } from 'react';
 
 import FavoritesList from '../components/Favorites/FavoritesList';
-import LoadingSpinner from '../components/LoadingSpinner/LoadingSpinner';
-import { MOCK_FAVORITES } from '../mock-data/mock-favorites';
 import UpButton from '../UI/UpButton';
-import {
-  // getFromStorage,
-
-  setToStorage,
-} from '../utils/localStorage';
+import { getFromStorage, setToStorage } from '../utils/localStorage';
 import classes from './Favorites.module.css';
 
 const Favorites = () => {
   const [scroll, setScroll] = useState(0);
   const [favorites, setFavorites] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
 
   const handleScroll = () => {
     setScroll(window.scrollY);
@@ -31,30 +24,14 @@ const Favorites = () => {
   }, []);
 
   useEffect(() => {
-    setIsLoading(true);
-    setFavorites(
-      // getFromStorage(
-      // 'favorites') ??
-      MOCK_FAVORITES,
-    );
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 1500);
+    setFavorites(getFromStorage('favorites') ?? []);
   }, []);
 
-  // const addFavoriteHandler = (addedFavorite) => {
-  //   setFavorites((prevFavorites) => {
-  //     const updatedFavorites = [...prevFavorites];
-  //     updatedFavorites.unshift(addedFavorite);
-
-  //     return updatedFavorites;
-  //   });
-  // };
-
   const deleteFavoriteHandler = (removedDriverId) => {
+    console.log(removedDriverId);
     setFavorites((prevFavorites) => {
       const updatedFavorites = prevFavorites.filter(
-        (driver) => driver.driverId !== removedDriverId,
+        (driver) => driver.id !== removedDriverId,
       );
 
       return updatedFavorites;
@@ -76,8 +53,7 @@ const Favorites = () => {
   return (
     <>
       <h1>Favorite drivers:</h1>
-      {isLoading && <LoadingSpinner />}
-      <section className={classes.favorites}>{!isLoading && content}</section>
+      <section className={classes.favorites}>{content}</section>
       {scroll > 320 && (
         <UpButton
           className={classes['up-button--favorites']}

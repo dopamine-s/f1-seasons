@@ -2,9 +2,9 @@ import classes from './FavoriteRemoveButton.module.css';
 
 const FavoriteRemoveButton = (props) => {
   const deleteHandler = () => {
-    console.log(props.driverId);
+    console.log(props.id);
 
-    props.onRemove(props.driverId);
+    props.onRemove(props.id);
   };
 
   return (

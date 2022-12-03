@@ -89,7 +89,9 @@ const Seasons = () => {
           <p className={classes.center}>{error}</p>
         </div>
       )}
-      {!error && <section className={classes.seasons}>{content}</section>}
+      {!isLoading && (
+        <section className={classes.seasons}>{!error && content}</section>
+      )}
       {scroll > 320 && (
         <UpButton
           className={classes['up-button--seasons']}

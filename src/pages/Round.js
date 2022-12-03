@@ -5,7 +5,9 @@ import { getRoundResults } from '../api/api';
 import LoadingSpinner from '../components/LoadingSpinner/LoadingSpinner';
 import NamesList from '../components/Round/NamesList';
 import RoundResultsList from '../components/Round/RoundResultsList';
+import { MOCK_FAVORITES } from '../mock-data/mock-favorites';
 import UpButton from '../UI/UpButton';
+import { getFromStorage, setToStorage } from '../utils/localStorage';
 import classes from './Round.module.css';
 
 const Round = () => {
@@ -16,6 +18,7 @@ const Round = () => {
   const [raceName, setRaceName] = useState('');
   const [roundNumber, setroundNumber] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [favorites, setFavorites] = useState([]);
 
   const { seasonId, roundId } = useParams();
 
@@ -40,6 +43,7 @@ const Round = () => {
       try {
         const response = await getRoundResults(seasonId, roundId);
         const results = response.MRData.RaceTable.Races[0].Results;
+
         setRaceName(response.MRData.RaceTable.Races[0].raceName);
         setroundNumber(response.MRData.RaceTable.Races[0].round);
         setResults(results);
@@ -56,10 +60,27 @@ const Round = () => {
     setIsLoading(false);
   }, [loadResults]);
 
+  useEffect(() => {
+    setFavorites(getFromStorage('favorites') ?? MOCK_FAVORITES);
+  }, []);
+
+  const addFavoriteHandler = (addedFavorite) => {
+    console.log('addedFavorite', addedFavorite);
+    console.log('id', addedFavorite.id);
+
+    // setFavorites((prevFavorites) => {
+    //   prevFavorites.shift(addedFavorite);
+    // });
+  };
+
+  useEffect(() => {
+    setToStorage('favorites', favorites);
+  }, [favorites]);
+
   let content = <p className={classes.center}>No seasons found</p>;
 
   if (results.length > 0) {
-    content = <RoundResultsList results={results} />;
+    content = <RoundResultsList results={results} onAdd={addFavoriteHandler} />;
   }
 
   return (

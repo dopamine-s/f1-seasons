@@ -32,7 +32,7 @@ h2 {
     column-gap: 1rem;
     padding: 1rem;
     margin: 1rem 0 2rem;
-    min-width: 546px;
+    width: 600px;
     min-height: 491px;
   }
 
