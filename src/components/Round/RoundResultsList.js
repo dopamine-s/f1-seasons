@@ -13,7 +13,7 @@ const RoundResultsList = (props) => {
       {props.results.map((result) => (
         <RoundResult
           key={nanoid()}
-          id={nanoid()}
+          id={`${result.position}${result.Driver.driverId}`}
           position={result.position}
           points={result.points}
           driverId={result.Driver.driverId}

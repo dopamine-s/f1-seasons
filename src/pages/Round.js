@@ -5,7 +5,6 @@ import { getRoundResults } from '../api/api';
 import LoadingSpinner from '../components/LoadingSpinner/LoadingSpinner';
 import NamesList from '../components/Round/NamesList';
 import RoundResultsList from '../components/Round/RoundResultsList';
-import { MOCK_FAVORITES } from '../mock-data/mock-favorites';
 import UpButton from '../UI/UpButton';
 import { getFromStorage, setToStorage } from '../utils/localStorage';
 import classes from './Round.module.css';
@@ -18,9 +17,7 @@ const Round = () => {
   const [raceName, setRaceName] = useState('');
   const [roundNumber, setroundNumber] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [favorites, setFavorites] = useState(
-    getFromStorage('favorites') || MOCK_FAVORITES,
-  );
+  const [favorites, setFavorites] = useState(getFromStorage('favorites') || []);
 
   const { seasonId, roundId } = useParams();
 
@@ -69,7 +66,16 @@ const Round = () => {
     setFavorites((prevFavorites) => {
       const updatedFavorites = [...prevFavorites];
       console.log('updatedFavorites', updatedFavorites);
-      updatedFavorites.unshift(addedFavorite);
+
+      const existingFavorite = updatedFavorites.find(
+        (existingFavorite) => existingFavorite.id === addedFavorite.id,
+      );
+
+      console.log(existingFavorite, 'existingFavoriteId');
+
+      if (!existingFavorite) {
+        updatedFavorites.unshift(addedFavorite);
+      }
 
       return updatedFavorites;
     });
