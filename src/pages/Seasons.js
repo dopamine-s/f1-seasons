@@ -48,6 +48,7 @@ const Seasons = () => {
   const loadRounds = useCallback(
     async function () {
       setError(null);
+      setIsLoading(true);
 
       try {
         const rounds = await getRounds(selectedSeason);
@@ -55,15 +56,14 @@ const Seasons = () => {
       } catch (err) {
         setError(err);
       }
+      setIsLoading(false);
     },
     [selectedSeason],
   );
 
   useEffect(() => {
-    setIsLoading(true);
     loadSeasons();
     loadRounds();
-    setIsLoading(false);
   }, [loadSeasons, loadRounds, selectedSeason]);
 
   let content = <p className={classes.center}>No seasons found</p>;

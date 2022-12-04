@@ -38,6 +38,7 @@ const Round = () => {
   const loadResults = useCallback(
     async function () {
       setError(null);
+      setIsLoading(true);
 
       try {
         const response = await getRoundResults(seasonId, roundId);
@@ -49,14 +50,13 @@ const Round = () => {
       } catch (err) {
         setError(err);
       }
+      setIsLoading(false);
     },
     [seasonId, roundId],
   );
 
   useEffect(() => {
-    setIsLoading(true);
     loadResults();
-    setIsLoading(false);
   }, [loadResults]);
 
   const addFavoriteHandler = (addedFavorite) => {
