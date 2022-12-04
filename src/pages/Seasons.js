@@ -53,7 +53,7 @@ const Seasons = () => {
         const rounds = await getRounds(selectedSeason);
         setRounds(rounds);
       } catch (err) {
-        setError(err.message);
+        setError(err);
       }
     },
     [selectedSeason],
@@ -84,10 +84,10 @@ const Seasons = () => {
       />
       {isLoading && <LoadingSpinner />}
       {error && (
-        <div>
-          <h2 className={classes.error}>Error! Something went wrong.</h2>
-          <p className={classes.center}>{error}</p>
-        </div>
+        <h2 className={classes.error}>
+          Error! <br />
+          What went wrong?
+        </h2>
       )}
       {!isLoading && (
         <section className={classes.seasons}>{!error && content}</section>

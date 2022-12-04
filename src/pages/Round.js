@@ -47,7 +47,7 @@ const Round = () => {
         setroundNumber(response.MRData.RaceTable.Races[0].round);
         setResults(results);
       } catch (err) {
-        setError(err.message);
+        setError(err);
       }
     },
     [seasonId, roundId],
@@ -110,12 +110,7 @@ const Round = () => {
         Back to the seasons
       </button>
       {isLoading && <LoadingSpinner />}
-      {error && (
-        <div>
-          <h2 className={classes.error}>Error! Something went wrong.</h2>
-          <p className={classes.center}>{error}</p>
-        </div>
-      )}
+      {error && <h2 className={classes.error}>Error! Something went wrong.</h2>}
       {!error && (
         <>
           {!isLoading && <NamesList />}
