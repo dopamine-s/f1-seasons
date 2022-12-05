@@ -22,7 +22,7 @@ const Favorite = (props) => {
         <FavoriteRemoveButton
           info={'Remove'}
           onRemove={props.onRemove}
-          id={props.id}
+          driverId={props.driverId}
         />
       </Card>
     </li>

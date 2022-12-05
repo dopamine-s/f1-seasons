@@ -27,7 +27,7 @@ const Favorites = () => {
     console.log(removedDriverId);
     setFavorites((prevFavorites) => {
       const updatedFavorites = prevFavorites.filter(
-        (driver) => driver.id !== removedDriverId,
+        (driver) => driver.driverId !== removedDriverId,
       );
 
       return updatedFavorites;
