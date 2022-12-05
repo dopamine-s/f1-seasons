@@ -4,6 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { getRoundResults } from '../api/api';
 import LoadingSpinner from '../components/LoadingSpinner/LoadingSpinner';
 import NamesList from '../components/Round/NamesList';
+import RoundFlagItem from '../components/Round/RoundFlagItem';
 import RoundResultsList from '../components/Round/RoundResultsList';
 import UpButton from '../UI/UpButton';
 import { getFromStorage, setToStorage } from '../utils/localStorage';
@@ -87,7 +88,11 @@ const Round = () => {
 
   if (results.length > 0) {
     content = (
-      <RoundResultsList results={results} onToggle={toggleFavoriteHandler} />
+      <RoundResultsList
+        results={results}
+        favorites={favorites}
+        onToggle={toggleFavoriteHandler}
+      />
     );
   }
 
@@ -96,6 +101,7 @@ const Round = () => {
       {!isLoading && !error && (
         <>
           <h1>{raceName}</h1>
+          <RoundFlagItem />
           <p className={classes['round-info']}>Round: {roundNumber}</p>
           <p className={classes['round-info']}>{seasonId}</p>
         </>

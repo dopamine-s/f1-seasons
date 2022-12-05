@@ -13,7 +13,7 @@ const RoundResultsList = (props) => {
       {props.results.map((result) => (
         <RoundResult
           key={nanoid()}
-          id={`${result.position}${result.Driver.driverId}`}
+          id={`${result.Driver.driverId}`}
           position={result.position}
           points={result.points}
           driverId={result.Driver.driverId}
@@ -25,6 +25,13 @@ const RoundResultsList = (props) => {
           nationality={result.Driver.nationality}
           time={result.Time ? result.Time.time : 'Dropped out'}
           team={result.Constructor.name}
+          isFavorite={
+            props.favorites.find(
+              (favorite) => favorite.id === result.Driver.driverId,
+            )
+              ? true
+              : false
+          }
           onToggle={toggleFavoriteHandler}
         />
       ))}

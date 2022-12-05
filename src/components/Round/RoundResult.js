@@ -36,6 +36,7 @@ const RoundResult = (props) => {
           code={props.code}
           nationality={props.nationality}
           permanentNumber={props.permanentNumber}
+          isFavorite={props.isFavorite}
           onToggle={toggleFavoriteHandler}
         />
       </Card>

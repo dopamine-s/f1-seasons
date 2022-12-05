@@ -5,6 +5,7 @@ import RoundIdItem from './RoundIdItem';
 import RoundInfoItem from './RoundInfoItem';
 import classes from './SeasonRound.module.css';
 import SeasonRoundDetailsButton from './SeasonRoundDetailsButton';
+import SeasonRoundFlagItem from './SeasonRoundFlagItem';
 
 const SeasonRound = (props) => {
   const navigate = useNavigate();
@@ -16,6 +17,7 @@ const SeasonRound = (props) => {
   return (
     <li>
       <Card className={classes.card}>
+        <SeasonRoundFlagItem country={props.country} />
         <RoundIdItem title={'Race'} info={props.raceName} />
         <RoundInfoItem title={'Date'} info={props.date} />
         <RoundInfoItem title={'Round'} info={props.round} />

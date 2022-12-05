@@ -1,4 +1,5 @@
 import classes from './FavoriteToggleButton.module.css';
+
 const FavoriteToggleButton = (props) => {
   const toggleHandler = () => {
     const selectedFavorite = {
@@ -18,8 +19,10 @@ const FavoriteToggleButton = (props) => {
   return (
     <>
       <button className={classes.button} onClick={toggleHandler}>
-        <span className={classes.plus}>+</span>
-        <span className={classes.words}> toggle Fav</span>
+        <span className={classes.plus}>{props.isFavorite ? 'F' : '+'}</span>
+        <span className={classes.words}>
+          {props.isFavorite ? 'Delete Fav' : 'Add to Fav'}
+        </span>
       </button>
     </>
   );
