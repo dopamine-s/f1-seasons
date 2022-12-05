@@ -4,8 +4,8 @@ import RoundResult from './RoundResult';
 import classes from './RoundResultsList.module.css';
 
 const RoundResultsList = (props) => {
-  const addFavoriteHandler = (addedFavorite) => {
-    props.onAdd(addedFavorite);
+  const toggleFavoriteHandler = (selectedFavorite) => {
+    props.onToggle(selectedFavorite);
   };
 
   return (
@@ -25,7 +25,7 @@ const RoundResultsList = (props) => {
           nationality={result.Driver.nationality}
           time={result.Time ? result.Time.time : 'Dropped out'}
           team={result.Constructor.name}
-          onAdd={addFavoriteHandler}
+          onToggle={toggleFavoriteHandler}
         />
       ))}
     </ul>

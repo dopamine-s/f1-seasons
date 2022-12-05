@@ -1,12 +1,12 @@
 import Card from '../../UI/Card';
-import FavoriteAddButton from './FavoriteAddButton';
+import FavoriteToggleButton from './FavoriteToggleButton';
 import ResultIdItem from './ResultIdItem';
 import ResultInfoItem from './ResultInfoItem';
 import classes from './RoundResult.module.css';
 
 const RoundResult = (props) => {
-  const addFavoriteHandler = (addedFavorite) => {
-    props.onAdd(addedFavorite);
+  const toggleFavoriteHandler = (selectedFavorite) => {
+    props.onToggle(selectedFavorite);
   };
 
   let winnerClasses = '';
@@ -27,7 +27,7 @@ const RoundResult = (props) => {
         <ResultInfoItem title={'Last Name'} info={props.familyName} />
         <ResultInfoItem title={'Team'} info={props.team} />
         <ResultInfoItem title={'Time'} info={props.time} />
-        <FavoriteAddButton
+        <FavoriteToggleButton
           id={props.id}
           driverId={props.driverId}
           dateOfBirth={props.dateOfBirth}
@@ -36,7 +36,7 @@ const RoundResult = (props) => {
           code={props.code}
           nationality={props.nationality}
           permanentNumber={props.permanentNumber}
-          onAdd={addFavoriteHandler}
+          onToggle={toggleFavoriteHandler}
         />
       </Card>
     </li>

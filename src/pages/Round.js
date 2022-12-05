@@ -59,22 +59,18 @@ const Round = () => {
     loadResults();
   }, [loadResults]);
 
-  const addFavoriteHandler = (addedFavorite) => {
-    console.log('addedFavorite', addedFavorite);
-    console.log('id', addedFavorite.id);
-
+  const toggleFavoriteHandler = (selectedFavorite) => {
     setFavorites((prevFavorites) => {
       const updatedFavorites = [...prevFavorites];
-      console.log('updatedFavorites', updatedFavorites);
 
       const existingFavorite = updatedFavorites.find(
-        (existingFavorite) => existingFavorite.id === addedFavorite.id,
+        (existingFavorite) => existingFavorite.id === selectedFavorite.id,
       );
 
-      console.log(existingFavorite, 'existingFavoriteId');
-
       if (!existingFavorite) {
-        updatedFavorites.unshift(addedFavorite);
+        updatedFavorites.unshift(selectedFavorite);
+      } else if (existingFavorite) {
+        updatedFavorites.splice(selectedFavorite, 1);
       }
 
       return updatedFavorites;
@@ -90,7 +86,9 @@ const Round = () => {
   let content = <p className={classes.center}>No seasons found</p>;
 
   if (results.length > 0) {
-    content = <RoundResultsList results={results} onAdd={addFavoriteHandler} />;
+    content = (
+      <RoundResultsList results={results} onToggle={toggleFavoriteHandler} />
+    );
   }
 
   return (
