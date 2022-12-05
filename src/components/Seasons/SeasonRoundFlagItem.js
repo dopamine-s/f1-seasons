@@ -1,5 +1,5 @@
 // import { countryListAllIsoData } from '../../constants/constants';
-import imgFlag from '../../images/flags/ad.svg';
+import raceFlag from '../../images/race-flag.svg';
 import classes from './SeasonRoundFlagItem.module.css';
 
 const SeasonRoundFlagItem = (props) => {
@@ -18,7 +18,7 @@ const SeasonRoundFlagItem = (props) => {
     <>
       <div className={classes.wrapper}>
         <img
-          src={imgFlag}
+          src={raceFlag}
           width="20%"
           title="Country Flag"
           alt={props.country}

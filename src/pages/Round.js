@@ -65,13 +65,15 @@ const Round = () => {
       const updatedFavorites = [...prevFavorites];
 
       const existingFavorite = updatedFavorites.find(
-        (existingFavorite) => existingFavorite.id === selectedFavorite.id,
+        (existingFavorite) =>
+          existingFavorite.driverId === selectedFavorite.driverId,
       );
 
       if (!existingFavorite) {
         updatedFavorites.unshift(selectedFavorite);
       } else if (existingFavorite) {
-        updatedFavorites.splice(selectedFavorite, 1);
+        const index = updatedFavorites.indexOf(existingFavorite);
+        updatedFavorites.splice(index, 1);
       }
 
       return updatedFavorites;

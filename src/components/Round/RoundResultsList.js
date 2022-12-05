@@ -6,6 +6,7 @@ import classes from './RoundResultsList.module.css';
 const RoundResultsList = (props) => {
   const toggleFavoriteHandler = (selectedFavorite) => {
     props.onToggle(selectedFavorite);
+    console.log(selectedFavorite);
   };
 
   return (
@@ -13,7 +14,6 @@ const RoundResultsList = (props) => {
       {props.results.map((result) => (
         <RoundResult
           key={nanoid()}
-          id={`${result.Driver.driverId}`}
           position={result.position}
           points={result.points}
           driverId={result.Driver.driverId}
@@ -27,7 +27,7 @@ const RoundResultsList = (props) => {
           team={result.Constructor.name}
           isFavorite={
             props.favorites.find(
-              (favorite) => favorite.id === result.Driver.driverId,
+              (favorite) => favorite.driverId === result.Driver.driverId,
             )
               ? true
               : false

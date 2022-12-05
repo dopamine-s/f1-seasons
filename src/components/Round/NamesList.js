@@ -1,4 +1,4 @@
-import classes from './NameList.module.css';
+import classes from './NamesList.module.css';
 
 const NamesList = () => {
   return (
@@ -26,7 +26,7 @@ const NamesList = () => {
           <p>Time</p>
         </li>
         <li>
-          <p>Add Fav</p>
+          <p>Fav Add / Del</p>
         </li>
       </ul>
     </>
