@@ -73,4 +73,3 @@ Give a ⭐️ if this project helped you!
 >https://ergast.com/mrd
 
 Documentation is provided over there
-
