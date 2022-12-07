@@ -28,16 +28,11 @@ npm start
 ---
 
 ## Show your support
-
 Give a ⭐️ if this project helped you!
----
-
----
+***
 
 ## About «F1 seasons» SPA:
-
----
-
+>
 ### Frontend Assessment React SPA
 
 >The goal of the project was to create a dashboard with Formula-1 seasons, rounds, and racers
@@ -78,4 +73,3 @@ Give a ⭐️ if this project helped you!
 >https://ergast.com/mrd
 
 Documentation is provided over there
-
