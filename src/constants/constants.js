@@ -397,4 +397,5 @@ export const countryListAllIsoData = [
   { code: 'ZM', code3: 'ZMB', name: 'Zambia', number: '894' },
   { code: 'ZW', code3: 'ZWE', name: 'Zimbabwe', number: '716' },
   { code: 'AX', code3: 'ALA', name: 'Åland Islands', number: '248' },
+  { code: 'race-flag', code3: 'race-flag', name: 'Race Flag', number: '' },
 ];

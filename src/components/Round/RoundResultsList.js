@@ -6,7 +6,6 @@ import classes from './RoundResultsList.module.css';
 const RoundResultsList = (props) => {
   const toggleFavoriteHandler = (selectedFavorite) => {
     props.onToggle(selectedFavorite);
-    console.log(selectedFavorite);
   };
 
   return (

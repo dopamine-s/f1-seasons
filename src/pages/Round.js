@@ -17,6 +17,7 @@ const Round = () => {
   const [results, setResults] = useState([]);
   const [raceName, setRaceName] = useState('');
   const [roundNumber, setroundNumber] = useState('');
+  const [country, setCountry] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [favorites, setFavorites] = useState(getFromStorage('favorites') || []);
 
@@ -47,6 +48,7 @@ const Round = () => {
 
         setRaceName(response.MRData.RaceTable.Races[0].raceName);
         setroundNumber(response.MRData.RaceTable.Races[0].round);
+        setCountry(response.MRData.RaceTable.Races[0].Circuit.Location.country);
         setResults(results);
       } catch (err) {
         setError(err);
@@ -103,7 +105,7 @@ const Round = () => {
       {!isLoading && !error && (
         <>
           <h1>{raceName}</h1>
-          <RoundFlagItem />
+          <RoundFlagItem country={country} />
           <p className={classes['round-info']}>Round: {roundNumber}</p>
           <p className={classes['round-info']}>{seasonId}</p>
         </>
