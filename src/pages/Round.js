@@ -44,12 +44,13 @@ const Round = () => {
 
       try {
         const response = await getRoundResults(seasonId, roundId);
-        const results = response.MRData.RaceTable.Races[0].Results;
+        const currentRace = response.MRData.RaceTable.Races[0];
+        const { raceName, round, Results, Circuit } = currentRace;
 
-        setRaceName(response.MRData.RaceTable.Races[0].raceName);
-        setroundNumber(response.MRData.RaceTable.Races[0].round);
-        setCountry(response.MRData.RaceTable.Races[0].Circuit.Location.country);
-        setResults(results);
+        setRaceName(raceName);
+        setroundNumber(round);
+        setCountry(Circuit.Location.country);
+        setResults(Results);
       } catch (err) {
         setError(err);
       }
@@ -59,7 +60,7 @@ const Round = () => {
   );
 
   useEffect(() => {
-    loadResults();
+    void loadResults();
   }, [loadResults]);
 
   const toggleFavoriteHandler = (selectedFavorite) => {
