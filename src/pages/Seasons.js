@@ -4,31 +4,15 @@ import { getRounds, getSeasonsList } from '../api/api';
 import LoadingSpinner from '../components/LoadingSpinner/LoadingSpinner';
 import SeasonRoundsList from '../components/Seasons/SeasonRoundsList';
 import SeasonSelect from '../components/Seasons/SeasonSelect';
-import UpButton from '../UI/UpButton';
 import { currentYear } from '../utils/helpers';
 import classes from './Seasons.module.css';
 
 const Seasons = () => {
-  const [scroll, setScroll] = useState(0);
   const [seasons, setSeasons] = useState([]);
   const [selectedSeason, setSelectedSeason] = useState(currentYear);
   const [error, setError] = useState(null);
   const [rounds, setRounds] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-
-  const handleScroll = () => {
-    setScroll(window.scrollY);
-  };
-
-  const handleUpButton = () => {
-    window.scrollTo(0, 0);
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const seasonChangeHandler = (seasonYear) => {
     setSelectedSeason(seasonYear);
@@ -91,12 +75,6 @@ const Seasons = () => {
       )}
       {!isLoading && (
         <section className={classes.seasons}>{!error && content}</section>
-      )}
-      {scroll > 320 && (
-        <UpButton
-          className={classes['up-button--seasons']}
-          onClick={handleUpButton}
-        />
       )}
     </>
   );

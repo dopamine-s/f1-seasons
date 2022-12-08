@@ -6,21 +6,3 @@
 .center {
   text-align: center;
 }
-
-@media (min-width: 768px) {
-  .up-button--favorites {
-    display: block;
-  }
-}
-
-@media (min-width: 1280px) {
-  .up-button--favorites { 
-    right: 0;
-  }
-}
-
-@media (min-width: 1366px) {
-  .up-button--favorites { 
-    right: 1.5%
-  }
-}

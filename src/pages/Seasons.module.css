@@ -19,16 +19,3 @@
   border-radius: 6px;
   padding: 0.5rem;
 }
-
-@media (min-width: 768px) {
-  .up-button--seasons {
-    display: block;
-    right: 0;
-  }
-}
-
-@media (min-width: 1280px) {
-  .up-button--seasons { 
-    right: 1.5%;
-  }
-}

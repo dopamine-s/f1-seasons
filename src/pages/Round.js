@@ -6,13 +6,11 @@ import LoadingSpinner from '../components/LoadingSpinner/LoadingSpinner';
 import NamesList from '../components/Round/NamesList';
 import RoundFlagItem from '../components/Round/RoundFlagItem';
 import RoundResultsList from '../components/Round/RoundResultsList';
-import UpButton from '../UI/UpButton';
 import { getFromStorage, setToStorage } from '../utils/localStorage';
 import classes from './Round.module.css';
 
 const Round = () => {
   const navigate = useNavigate();
-  const [scroll, setScroll] = useState(0);
   const [error, setError] = useState(null);
   const [results, setResults] = useState([]);
   const [raceName, setRaceName] = useState('');
@@ -22,20 +20,6 @@ const Round = () => {
   const [favorites, setFavorites] = useState(getFromStorage('favorites') || []);
 
   const { seasonId, roundId } = useParams();
-
-  const handleScroll = () => {
-    setScroll(window.scrollY);
-  };
-
-  const handleUpButton = () => {
-    window.scrollTo(0, 0);
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const loadResults = useCallback(
     async function () {
@@ -124,12 +108,6 @@ const Round = () => {
           {!isLoading && <NamesList />}
           <section className={classes.round}>{!isLoading && content}</section>
         </>
-      )}
-      {scroll > 320 && (
-        <UpButton
-          className={classes['up-button--round']}
-          onClick={handleUpButton}
-        />
       )}
     </>
   );
