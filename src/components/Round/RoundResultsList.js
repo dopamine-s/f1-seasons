@@ -17,7 +17,6 @@ const RoundResultsList = (props) => {
           points={result.points}
           driverId={result.Driver.driverId}
           permanentNumber={result.Driver.permanentNumber}
-          code={result.Driver.code ?? 'N/A'}
           givenName={result.Driver.givenName}
           familyName={result.Driver.familyName}
           dateOfBirth={result.Driver.dateOfBirth}
