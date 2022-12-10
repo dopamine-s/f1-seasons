@@ -1,27 +1,11 @@
 import { useEffect, useState } from 'react';
 
 import FavoritesList from '../components/Favorites/FavoritesList';
-import UpButton from '../UI/UpButton';
 import { getFromStorage, setToStorage } from '../utils/localStorage';
 import classes from './Favorites.module.css';
 
 const Favorites = () => {
-  const [scroll, setScroll] = useState(0);
   const [favorites, setFavorites] = useState(getFromStorage('favorites') || []);
-
-  const handleScroll = () => {
-    setScroll(window.scrollY);
-  };
-
-  const handleUpButton = () => {
-    window.scrollTo(0, 0);
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const deleteFavoriteHandler = (removedDriverId) => {
     setFavorites((prevFavorites) => {
@@ -49,12 +33,6 @@ const Favorites = () => {
     <>
       <h1>Favorite drivers:</h1>
       <section className={classes.favorites}>{content}</section>
-      {scroll > 320 && (
-        <UpButton
-          className={classes['up-button--favorites']}
-          onClick={handleUpButton}
-        />
-      )}
     </>
   );
 };

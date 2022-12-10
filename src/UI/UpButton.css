@@ -4,6 +4,7 @@
 
 @media (min-width: 768px) {
   .up-button {
+    display: block;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 0.7rem 1rem;
     margin: 0.5rem;
