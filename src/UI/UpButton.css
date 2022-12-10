@@ -2,7 +2,7 @@
   display: none
 }
 
-@media (min-width: 844px) {
+@media (min-width: 768px) {
   .up-button {
     display: block;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
