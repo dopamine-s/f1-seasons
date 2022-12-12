@@ -26,8 +26,8 @@
 
 @media (min-width: 768px) {
   .button {
-    margin: 0 0 0 0.5rem;
-    padding: 0 0.1rem 0.2rem;
+    margin: 0 0 0 1rem;
+    padding: 0.1rem 0.1rem 0.2rem;
     grid-column: unset;
     font-size: 1.5rem;
     align-self: center;

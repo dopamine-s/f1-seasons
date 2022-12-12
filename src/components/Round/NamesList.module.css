@@ -5,7 +5,7 @@
 @media (min-width: 768px) {
   .names {
     display: grid;
-    grid-template-columns: 30px 80px 50px repeat(3, 1fr) 100px 45px;
+    grid-template-columns: 40px 70px repeat(2, 1fr) 120px 40px;
     padding: 0 0.6rem;
     margin: 0.7rem auto 1.5rem;
     justify-items: center;
@@ -14,7 +14,7 @@
     background-color: #fff7f7;
     opacity: 0.85;
     border-radius: 2px;
-    width: 690px;
+    width: 600px;
   }
 
   .names p {

@@ -28,12 +28,12 @@ h2 {
 @media (min-width: 768px) {
   .card {
     display: grid;
-    grid-template-columns: 50px 50px 65px repeat(3, 1fr) 100px 40px;
+    grid-template-columns: 50px 50px repeat(2, 1fr) 100px 55px;
     padding: 0.6rem;
     margin: 0.7rem 0 0.5rem;
     align-items:  stretch;
     min-height: 75px;
-    min-width: 690px;
+    width: 600px;
   }
 
    h2 {

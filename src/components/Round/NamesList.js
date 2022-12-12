@@ -11,13 +11,7 @@ const NamesList = () => {
           <p>Score</p>
         </li>
         <li>
-          <p>Code</p>
-        </li>
-        <li>
-          <p>Name</p>
-        </li>
-        <li>
-          <p>Last name</p>
+          <p>Full Name</p>
         </li>
         <li>
           <p>Team</p>
