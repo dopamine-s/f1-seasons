@@ -97,10 +97,10 @@ const Round = () => {
       )}
       <button
         className={classes['nav-button']}
-        onClick={() => navigate('/')}
+        onClick={() => navigate(`/${seasonId}`)}
         type="button"
       >
-        Back to the seasons
+        Back to the season
       </button>
       {isLoading && <LoadingSpinner />}
       {error && <h2 className={classes.error}>Error! Something went wrong.</h2>}
