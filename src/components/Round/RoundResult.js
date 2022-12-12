@@ -6,6 +6,8 @@ import ResultNameItem from './ResultNameItem';
 import classes from './RoundResult.module.css';
 
 const RoundResult = (props) => {
+  const fullName = `${props.givenName} ${props.familyName}`;
+
   const toggleFavoriteHandler = (selectedFavorite) => {
     props.onToggle(selectedFavorite);
   };
@@ -23,11 +25,7 @@ const RoundResult = (props) => {
       <Card className={cssClasses}>
         <ResultIdItem title={'Position'} info={props.position} />
         <ResultInfoItem title={'Points'} info={props.points} />
-        <ResultNameItem
-          title={'Name'}
-          name={props.givenName}
-          familyName={props.familyName}
-        />
+        <ResultNameItem title={'Name'} fullName={fullName} />
         <ResultInfoItem title={'Team'} info={props.team} />
         <ResultInfoItem title={'Time'} info={props.time} />
         <FavoriteToggleButton
