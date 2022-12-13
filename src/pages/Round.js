@@ -7,11 +7,13 @@ import NamesList from '../components/Round/NamesList';
 import RoundFlagItem from '../components/Round/RoundFlagItem';
 import RoundResultsList from '../components/Round/RoundResultsList';
 import { getFromStorage, setToStorage } from '../utils/localStorage';
+import NotFound from './NotFound';
 import classes from './Round.module.css';
 
 const Round = () => {
   const navigate = useNavigate();
   const [error, setError] = useState(null);
+  const [currentRace, setCurrentRace] = useState(null);
   const [results, setResults] = useState([]);
   const [raceName, setRaceName] = useState('');
   const [roundNumber, setroundNumber] = useState('');
@@ -29,8 +31,10 @@ const Round = () => {
       try {
         const response = await getRoundResults(seasonId, roundId);
         const currentRace = response.MRData.RaceTable.Races[0];
+        console.log(currentRace, 'currentRace');
         const { raceName, round, Results, Circuit } = currentRace;
 
+        setCurrentRace(currentRace);
         setRaceName(raceName);
         setroundNumber(round);
         setCountry(Circuit.Location.country);
@@ -83,6 +87,10 @@ const Round = () => {
         onToggle={toggleFavoriteHandler}
       />
     );
+  }
+
+  if (!isLoading && !currentRace) {
+    return <NotFound />;
   }
 
   return (
