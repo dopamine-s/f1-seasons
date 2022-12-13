@@ -6,6 +6,7 @@ import LoadingSpinner from '../components/LoadingSpinner/LoadingSpinner';
 import SeasonRoundsList from '../components/Seasons/SeasonRoundsList';
 import SeasonSelect from '../components/Seasons/SeasonSelect';
 import { currentYear } from '../utils/helpers';
+import NotFound from './NotFound';
 import classes from './Seasons.module.css';
 
 const Seasons = () => {
@@ -18,7 +19,7 @@ const Seasons = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    seasonId && setSelectedSeason(seasonId);
+    seasonId ? setSelectedSeason(seasonId) : setSelectedSeason(currentYear);
   }, [seasonId]);
 
   const seasonChangeHandler = (seasonYear) => {
@@ -57,6 +58,14 @@ const Seasons = () => {
     loadSeasons();
     loadRounds();
   }, [loadSeasons, loadRounds, selectedSeason]);
+
+  if (
+    seasonId &&
+    seasons &&
+    !seasons.find((season) => season.season === seasonId)
+  ) {
+    return <NotFound />;
+  }
 
   let content = <p className={classes.center}>No seasons found</p>;
 
