@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import { getRounds, getSeasonsList } from '../api/api';
 import LoadingSpinner from '../components/LoadingSpinner/LoadingSpinner';
@@ -8,14 +9,21 @@ import { currentYear } from '../utils/helpers';
 import classes from './Seasons.module.css';
 
 const Seasons = () => {
+  const navigate = useNavigate();
+  const { seasonId } = useParams();
   const [seasons, setSeasons] = useState([]);
-  const [selectedSeason, setSelectedSeason] = useState(currentYear);
+  const [selectedSeason, setSelectedSeason] = useState(seasonId ?? currentYear);
   const [error, setError] = useState(null);
   const [rounds, setRounds] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
+  useEffect(() => {
+    seasonId && setSelectedSeason(seasonId);
+  }, [seasonId]);
+
   const seasonChangeHandler = (seasonYear) => {
     setSelectedSeason(seasonYear);
+    navigate(`/${seasonYear}`);
   };
 
   const loadSeasons = useCallback(async function () {
