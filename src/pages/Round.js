@@ -31,7 +31,6 @@ const Round = () => {
       try {
         const response = await getRoundResults(seasonId, roundId);
         const currentRace = response.MRData.RaceTable.Races[0];
-        console.log(currentRace, 'currentRace');
         const { raceName, round, Results, Circuit } = currentRace;
 
         setCurrentRace(currentRace);
