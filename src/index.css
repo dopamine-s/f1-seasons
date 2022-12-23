@@ -12,14 +12,13 @@ body {
 
 @media (min-width: 1280px) {
   body {
-    background-image: url("./images/background-main.jpg");
+    background-image: url('./images/background-main.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-size: auto;
   }
 }
-
 
 a {
   text-decoration: none;
