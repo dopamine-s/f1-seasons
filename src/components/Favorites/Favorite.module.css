@@ -12,7 +12,6 @@ h2 {
   align-self: center;
 }
 
-
 @media (max-width: 320px) {
   .card {
     padding: 1rem 0 0.5rem 0;
@@ -20,7 +19,7 @@ h2 {
 }
 
 @media (min-width: 320px) {
-  .card {    
+  .card {
     padding: 1rem 0.5rem 0.5rem 0.5rem;
   }
 }
@@ -36,7 +35,7 @@ h2 {
     min-height: 491px;
   }
 
-   h2 {
+  h2 {
     padding: 0.5rem 0;
     font-size: 0.9rem;
     margin: 0 0.2rem;

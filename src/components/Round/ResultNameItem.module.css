@@ -7,7 +7,7 @@
 }
 
 .info {
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   border: 1px solid #fff7f7;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
@@ -35,7 +35,7 @@
     margin-left: 1rem;
   }
 
-  .wrapper h2 { 
+  .wrapper h2 {
     display: none;
   }
 }
