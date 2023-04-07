@@ -19,7 +19,7 @@ const SeasonSelect = (props) => {
               <option key={season.season}>{season.season}</option>
             ))
           ) : (
-            <option key={'2022'}>{props.selected}</option>
+            <option key={props.selected}>{props.selected}</option>
           )}
         </select>
       </div>
